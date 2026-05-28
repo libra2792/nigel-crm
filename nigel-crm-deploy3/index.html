@@ -425,7 +425,7 @@ input.f-val,textarea.f-val,select.f-val{background:none;border:none;outline:none
       </div>
     </div>
     <div class="pipe-bar">
-      <div class="sum-item"><div class="sum-val" id="ps-prospecting">0</div><div class="sum-lbl">Prospects</div></div>
+      <div class="sum-item"><div class="sum-val" id="ps-prospecting">0</div><div class="sum-lbl">Prospecting</div></div>
       <div class="sum-item"><div class="sum-val" id="ps-dealing">0</div><div class="sum-lbl">Dealing</div></div>
       <div class="sum-item"><div class="sum-val" id="ps-proposals">0</div><div class="sum-lbl">proposals out</div></div>
       <div class="sum-item"><div class="sum-val" id="ps-onboarding">0</div><div class="sum-lbl">pending onboarding</div></div>
@@ -494,7 +494,7 @@ input.f-val,textarea.f-val,select.f-val{background:none;border:none;outline:none
       <div class="ml" style="display:flex;gap:7px;">
         <button class="btn sm" id="bday-msg-btn" onclick="editBdayMsg()">✎ Edit Message</button>
         <button class="btn green sm" id="bday-ics-btn" onclick="exportICS()">⬇ .ics Calendar</button>
-        <button class="btn sm" id="gift-manage-btn" onclick="openManageEvents()" style="display:none;">⚙ Events</button>
+        <button class="btn sm" id="gift-manage-btn" onclick="openManageEvents()" style="display:none;">⚙ Gift Categories</button>
       </div>
     </div>
     <div id="bday-panel" style="flex:1;overflow-y:auto;padding:16px 20px;"></div>
@@ -2290,10 +2290,10 @@ function openManageEvents(){
     +'<input type="color" value="'+esc(ev.color)+'" style="width:32px;height:32px;border:1px solid var(--b1);border-radius:6px;cursor:pointer;padding:2px;" oninput="giftEvents['+i+'].color=this.value">'
     +'<button onclick="giftEvents.splice('+i+',1);saveState();openManageEvents()" style="background:none;border:none;color:var(--red);cursor:pointer;font-size:17px;padding:2px 6px;">✕</button>'
     +'</div>').join('');
-  openModal('<div class="m-hd"><div><div class="m-name">Manage Gift Events</div><div class="m-meta">Add, rename, recolour or remove occasions</div></div><button class="m-close" onclick="closeModal()">✕</button></div>'
+  openModal('<div class="m-hd"><div><div class="m-name">Manage Gift Categories</div><div class="m-meta">Add, rename, recolour or remove gift categories</div></div><button class="m-close" onclick="closeModal()">✕</button></div>'
   +'<div style="margin-bottom:12px;">'+rows+'</div>'
-  +'<div style="display:flex;gap:7px;margin-bottom:14px;"><input id="nev-e" placeholder="🎁" style="width:42px;border:1px solid var(--b1);border-radius:7px;padding:6px;text-align:center;font-size:17px;background:var(--paper2);"><input id="nev-l" placeholder="New occasion name…" style="flex:1;border:1px solid var(--b1);border-radius:7px;padding:7px 10px;font-size:13px;font-family:Outfit,sans-serif;background:var(--paper2);color:var(--t1);outline:none;"><button class="btn primary sm" onclick="addGiftEvent()">+ Add</button></div>'
-  +'<div class="m-actions"><button class="btn primary" onclick="saveState();closeModal();renderGifting();toast(\'Events saved ✓\')">Save Changes</button><button class="btn" onclick="closeModal()">Cancel</button></div>');
+  +'<div style="display:flex;gap:7px;margin-bottom:14px;"><input id="nev-e" placeholder="🎁" style="width:42px;border:1px solid var(--b1);border-radius:7px;padding:6px;text-align:center;font-size:17px;background:var(--paper2);"><input id="nev-l" placeholder="New gift category…" style="flex:1;border:1px solid var(--b1);border-radius:7px;padding:7px 10px;font-size:13px;font-family:Outfit,sans-serif;background:var(--paper2);color:var(--t1);outline:none;"><button class="btn primary sm" onclick="addGiftEvent()">+ Add</button></div>'
+  +'<div class="m-actions"><button class="btn primary" onclick="saveState();closeModal();renderGifting();toast(\'Gift categories saved ✓\')">Save Changes</button><button class="btn" onclick="closeModal()">Cancel</button></div>');
 }
 function addGiftEvent(){
   var e=(document.getElementById('nev-e')||{value:'🎁'}).value.trim()||'🎁';
