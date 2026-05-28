@@ -1,6 +1,6 @@
 [build]
-  publish = "."
-  functions = "netlify/functions"
+  publish = "nigel-crm-deploy3"
+  functions = "nigel-crm-deploy3/netlify/functions"
 
 [[redirects]]
   from = "/api/*"
